@@ -1,0 +1,23 @@
+# LangChain: Building Applications with Large Language Models
+
+## 1. Introduction
+LangChain is an open-source development framework designed to simplify the creation of applications using Large Language Models (LLMs). By providing standard interfaces for chains, agents, prompt templates, and memory, LangChain bridges the gap between raw LLM APIs and complex data-driven production workflows such as Retrieval-Augmented Generation (RAG).
+
+## 2. Core Modules and Architecture
+LangChain is structured into several modular components that can be combined or used independently:
+
+- **Models (LLMs & Chat Models):** Unified interfaces to interact with various model providers including OpenAI, Google Gemini, Anthropic, and local models via HuggingFace.
+- **Prompts:** Dynamic prompt management templates that facilitate formatting, few-shot examples selection, and chat message organization.
+- **Indexes (Loaders, Splitters, & VectorStores):** Tools for document ingestion, recursive text chunking, embedding generation, and integration with vector databases like FAISS, Pinecone, and Chroma.
+- **Chains:** Sequences of calls (standard or LCEL - LangChain Expression Language) that link models, retrievers, and tools together.
+- **Memory:** Mechanisms to persist state and conversational history across multi-turn interactions.
+- **Agents:** Autonomous setups where an LLM dynamically decides which tools (search engines, databases, calculators) to invoke based on user input.
+
+## 3. LangChain Expression Language (LCEL)
+Modern LangChain heavily relies on LCEL, a declarative way to compose chains seamlessly. It provides native support for streaming, asynchronous execution, batching, and fallback mechanisms using the pipe operator (`|`). Example conceptual pipeline:
+$$\text{Prompt} \mid \text{LLM} \mid \text{OutputParser}$$
+
+## 4. Common Use Cases
+- **Retrieval-Augmented Generation (RAG):** Querying internal private knowledge bases combined with LLMs.
+- **Conversational Chatbots:** Implementing memory-backed support assistants.
+- **Autonomous Agents:** Task-oriented agents capable of multi-step problem solving.

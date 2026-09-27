@@ -1,0 +1,25 @@
+# Transformers in Artificial Intelligence
+
+## 1. Introduction
+Introduced in the seminal 2017 paper "Attention Is All You Need" by Vaswani et al., the Transformer architecture revolutionized natural language processing (NLP) and has since expanded into computer vision, audio processing, and multimodal AI systems. Unlike recurrent neural networks (RNNs) that process data sequentially, transformers process entire sequences in parallel, dramatically improving training efficiency and enabling the scaling of large foundational models.
+
+## 2. Core Mechanism: Self-Attention
+At the heart of the transformer is the **Self-Attention** mechanism (specifically Scaled Dot-Product Attention). It allows the model to dynamically weigh the importance of different tokens in a sequence relative to each other, regardless of their positional distance. 
+The mathematical formulation is defined as:
+$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
+Where:
+- $Q$ represents Queries
+- $K$ represents Keys
+- $V$ represents Values
+- $d_k$ is the dimensionality of the keys
+
+## 3. Key Components
+- **Multi-Head Attention:** Runs the attention mechanism multiple times in parallel with different learned linear projections, allowing the model to jointly attend to information from different representation subspaces.
+- **Positional Encoding:** Because transformers process tokens simultaneously without inherent sequence order, sinusoidal or learned positional encodings are added to input embeddings to retain token sequence context.
+- **Feed-Forward Networks (FFN):** Applied to each position separately and identically across the sequence.
+- **Layer Normalization & Residual Connections:** Stabilize deep network training by preventing gradient degradation.
+
+## 4. Impact and Applications
+- **Large Language Models (LLMs):** GPT series, Claude, and Google Gemini.
+- **Vision Transformers (ViT):** Applying attention mechanisms directly to image patches for computer vision tasks.
+- **Diffusion Models:** Used in text-to-image and video generation pipelines (e.g., Stable Diffusion architectures).
